@@ -12,7 +12,7 @@ jobs:
     - name: Build
       run: dotnet build FastEndpoints.MediatR --configuration Release
     - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+      run: VERSION=$(echo "${{ steps.get_version.outputs.version }}") >> $GITHUB_ENV
     - name: Pack
       run: dotnet pack FastEndpoints.MediatR --configuration Release /p:Version=${VERSION} --output .
     - name: Push
