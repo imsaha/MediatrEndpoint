@@ -10,6 +10,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Build
-      run: dotnet build --configuration Release
-    - name: Test
-      run: dotnet test --configuration Release --no-build
+      run: dotnet build FastEndpoints.MediatR --configuration Release
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Pack
+      run: dotnet pack FastEndpoints.MediatR --configuration Release /p:Version=${VERSION} --output .
+    - name: Push
+      run: dotnet nuget push FastEndpoints.MediatR.${VERSION}.nupkg --source https://nuget.pkg.github.com/acraven/index.json --api-key ${GITHUB_TOKEN}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
