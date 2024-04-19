@@ -116,15 +116,3 @@ app.Run();
 
 
 ```
-
-## Folder structure in Clean Architecture Approach
-
-<img width="319" alt="image" src="https://github.com/imsaha/MediatrEndpoint/assets/34410962/de0e74e1-37ce-4c8c-8639-d5c37269d825">
-
-## Swagger document if using FastEndpoints
-
-<img width="1450" alt="image" src="https://github.com/imsaha/MediatrEndpoint/assets/34410962/90ebadb4-45a8-4f4d-a633-da72ae1c51d9">
-
-## Swagger document if using Minimal APi approach
-
-<img width="1432" alt="image" src="https://github.com/imsaha/MediatrEndpoint/assets/34410962/49e51f25-424c-4253-bbf0-1608537eb3cc">
