@@ -99,7 +99,7 @@ app.UseSwaggerGen(default, config =>
 });
 
 
-//Use as minimal API if you wise
+//Use as minimal API if you wish
 app.MapPost("/createEmployee", async ([FromServices]ISender sender, [FromBody]CreateEmployee command) =>
 {
     var result = await sender.Send(command);
