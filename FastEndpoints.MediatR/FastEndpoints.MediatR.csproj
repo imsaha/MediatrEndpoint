@@ -9,6 +9,7 @@
         <PackageTags>FastEndpoints; MediatR; Endpoints;</PackageTags>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/imsaha/MediatrEndpoint</RepositoryUrl>
+        <PackageReadmeFile>../README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
