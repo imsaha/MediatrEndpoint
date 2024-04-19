@@ -79,6 +79,7 @@ builder.Services.SwaggerDocument();
 
 var app = builder.Build();
 
+// Not require if you don't want to use FastEndpoints
 app.UseFastEndpoints(config =>
 {
     config.Endpoints.RoutePrefix = "api";
@@ -91,6 +92,14 @@ app.UseFastEndpoints(config =>
     config.Endpoints.IgnoreIsNotEndpoints();
 });
 
+//Use as minimal API if you wish
+app.MapPost("/createEmployee", async ([FromServices]ISender sender, [FromBody]CreateEmployee command) =>
+{
+    var result = await sender.Send(command);
+    return Results.Ok(result);
+}).WithSummary("Using MediatR command");
+
+
 app.UseSwaggerGen(default, config =>
 {
     config.ValidateSpecification = true;
@@ -98,13 +107,6 @@ app.UseSwaggerGen(default, config =>
     config.DefaultModelExpandDepth = -1;
 });
 
-
-//Use as minimal API if you wish
-app.MapPost("/createEmployee", async ([FromServices]ISender sender, [FromBody]CreateEmployee command) =>
-{
-    var result = await sender.Send(command);
-    return Results.Ok(result);
-}).WithSummary("Using MediatR command");
 
 app.Run();
 
