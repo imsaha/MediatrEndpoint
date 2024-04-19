@@ -16,4 +16,6 @@ jobs:
     - name: Pack
       run: dotnet pack FastEndpoints.MediatR --configuration Release /p:Version=${VERSION} --output .
     - name: Push
-      run: dotnet nuget push FastEndpoints.MediatR.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.GITHUB_TOKEN }}
+      env: 
+        TOKEN: ${{ secrets.TOKEN }}
+      run: dotnet nuget push FastEndpoints.MediatR.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key $TOKEN
