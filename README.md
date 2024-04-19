@@ -2,6 +2,9 @@
 
 Combines MediatR and FastEndpoint for quickly generating API endpoints from MediatR Requests
 
+
+`dotnet add package FastEndpoints.MediatR`
+
 ## Request
 
 Mark class or record as  `IMediatrEndpoint` or  `IMediatrEndpoint<T>` accordingly. This is an EndpointRequest Type
