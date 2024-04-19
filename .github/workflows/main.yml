@@ -18,4 +18,4 @@ jobs:
     - name: Push
       env:
         TOKEN: ${{ secrets.TOKEN }}
-      run: dotnet nuget push FastEndpoints.MediatR.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key $TOKEN
+      run: dotnet nuget push MediatR.Enpoints.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key $TOKEN
