@@ -5,17 +5,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Authors>imsaha</Authors>
-        <PackageId>FastEndpoints.MediatR</PackageId>
+        <PackageId>MediatR.Enpoints</PackageId>
         <PackageTags>FastEndpoints; MediatR; Endpoints;</PackageTags>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/imsaha/MediatrEndpoint</RepositoryUrl>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="12.2.0"/>
-        <PackageReference Include="FastEndpoints" Version="5.20.1"/>
-        <PackageReference Include="FastEndpoints.Swagger" Version="5.20.1"/>
+        <PackageReference Include="FastEndpoints" Version="5.24.0"/>
+        <PackageReference Include="FastEndpoints.Swagger" Version="5.24.0"/>
     </ItemGroup>
 
 </Project>
