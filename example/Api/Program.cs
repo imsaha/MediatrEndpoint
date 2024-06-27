@@ -62,6 +62,7 @@ app.UseFastEndpoints(config =>
     config.Serializer.Options.DictionaryKeyPolicy = JsonNamingPolicy.CamelCase;
     config.Serializer.Options.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
     config.Endpoints.IgnoreIsNotEndpoints();
+    config.Endpoints.AllowEmptyRequestDtos = true;
 });
 
 app.UseMiddleware<ExceptionMiddleware>();
