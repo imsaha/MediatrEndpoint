@@ -1,11 +1,11 @@
 namespace FastEndpoints.MediatR.Models;
 
-internal interface IResult<out T> : IResult
+public interface IResult<out T> : IResult
 {
     T? Data { get; }
 }
 
-internal interface IResult
+public interface IResult
 {
     bool IsSuccess { get; }
     string? ErrorMessage { get; }
