@@ -25,7 +25,7 @@ public struct Result : IResult
         {
             IsSuccess = isSuccess,
             ErrorMessage = message,
-            StatusCode = statusCode,
+            StatusCode = statusCode == 0 ? isSuccess ? 200 : 400 : statusCode,
             Errors = errors ?? new Dictionary<string, string>()
         };
     }
