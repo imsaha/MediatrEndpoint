@@ -10,6 +10,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/imsaha/MediatrEndpoint</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageDescription>Combines MediatR and FastEndpoint for quickly generating API endpoints from MediatR Requests</PackageDescription>
     </PropertyGroup>
 
     <ItemGroup>
