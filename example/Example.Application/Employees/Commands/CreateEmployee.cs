@@ -15,8 +15,8 @@ internal sealed class CreateEmployeeValidator : AbstractValidator<CreateEmployee
     public CreateEmployeeValidator(IAppDbContext dbContext)
     {
         _dbContext = dbContext;
-        RuleFor(x => x.Code).NotNull().MustAsync(beUniqueAsync).WithMessage("Code number already exists!");
-        RuleFor(x => x.Name).NotNull();
+        RuleFor(x => x.Code).NotNull().NotEmpty().MustAsync(beUniqueAsync).WithMessage("Code number already exists!");
+        RuleFor(x => x.Name).NotNull().NotEmpty();
     }
 
     private async Task<bool> beUniqueAsync(string code, CancellationToken ct)
